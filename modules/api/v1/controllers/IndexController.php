@@ -8,6 +8,7 @@
 
 namespace app\modules\api\v1\controllers;
 
+use app\models\Area;
 use yii\rest\Controller;
 
 class IndexController extends Controller
@@ -15,5 +16,10 @@ class IndexController extends Controller
     function actionIndex()
     {
         return ['state' => 'web service is working'];
+    }
+
+    function actionAreas()
+    {
+        return Area::find()->all();
     }
 }
